@@ -1,4 +1,4 @@
-import './App.css';
+import './styles/App.css';
 import { useState, useEffect } from "react";
 import Expenses from "./components/Expenses";
 import Lists from "./components/Lists";
@@ -42,8 +42,6 @@ function App() {
     localStorage.setItem("expsData", JSON.stringify([]));
   };
 
-
-
   return (
     <div>
       <h1>예산 계산기</h1>
@@ -52,8 +50,9 @@ function App() {
       </div>
       <button onClick={handleRemoveClick}>Delete All</button>
       <div>
-        <Lists expsData={expsData} />
+        <Lists expsData={expsData} setExpsData={setExpsData} />
       </div>
+        
     </div>
   );
 }

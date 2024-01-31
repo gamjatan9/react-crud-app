@@ -14,7 +14,7 @@ export default function Expenses({ item, setItem, value, setValue, handleSubmit 
       <input 
         type="text" 
         name="item"
-        placeholder="지출 항목을 입력"
+        placeholder="예) 렌트비"
         value={item}
         onChange={handleItemChange} />
       비용
