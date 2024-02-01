@@ -2,8 +2,5 @@
 
 
 
-
-https://github.com/gamjatan9/react-crud-app/assets/122338050/f523232b-ef18-408f-9a01-1ea08632b73a
-
-
+https://github.com/gamjatan9/react-crud-app/assets/122338050/527ef668-cfd8-451a-8da2-be31c0c74451
 
