@@ -10,21 +10,24 @@ export default function Expenses({ item, setItem, value, setValue, handleSubmit 
   };
   return (
     <form onSubmit={handleSubmit}>
-      지출
+      <span className="input-item-title">지출</span> 
       <input 
+        className="input-item"
         type="text" 
         name="item"
         placeholder="예) 렌트비"
         value={item}
         onChange={handleItemChange} />
-      비용
+        <div></div>
+      <span className="input-item-title">비용</span>
       <input 
-        type="text" 
+        className="input-item"
+        type="number" 
         name="value"
         value={value} 
         onChange={handleValueChange} />
-      <input value="제출" type="submit" />
-
+        <div></div>
+      <input className="input-submit" value="제출" type="submit" />
     </form>
   )
 }

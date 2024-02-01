@@ -1,0 +1,89 @@
+.container-lists {
+  padding: 50px;
+}
+
+.delete-all {
+  position: absolute;
+  bottom: 50px;
+  right: 70px;
+  width: 149px;
+  height: 50px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #b1b1b1;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.total{
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.total-exps {
+  margin-left: 400px;
+  font-size: 40px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.border {
+  border: 1px solid #c3c3c3;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.list-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 15px;
+  border: 1px solid #c3c3c3;
+}
+
+.list-item {
+  font-size: 25px;
+  color: #707070;
+  flex: 1; 
+  white-space: nowrap;
+}
+
+.list-value{
+  font-size: 25px;
+  color: #707070;
+  flex: 1;
+  text-align: left; 
+}
+
+.list-edit {
+  margin-left: auto;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.list-delete {
+  margin-left: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.input-list-item {
+  border: 1px solid #c3c3c3;
+  color: #707070;
+  font-size: 20px;
+  width: fit-content;
+  margin:auto;
+}
+
+.input-list-value {
+  border: 1px solid #c3c3c3;
+  color: #707070;
+  font-size: 20px;
+  width: fit-content;
+  margin:auto;
+}

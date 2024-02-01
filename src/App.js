@@ -1,7 +1,12 @@
-import './styles/App.css';
+import './styles/expenses.css';
+import './styles/general.css';
+import './styles/lists.css';
 import { useState, useEffect } from "react";
 import Expenses from "./components/Expenses";
 import Lists from "./components/Lists";
+import Alarm from './components/Alarm';
+import {ReactComponent as Coin } from './assets/coin.svg'
+import {ReactComponent as Balloon } from './assets/balloon.svg'
 
 function App() {
   const [expsData, setExpsData] = useState(() => {
@@ -11,9 +16,10 @@ function App() {
   });
   const [item, setItem] = useState("");
   const [value, setValue] = useState("");
+  const [alarmMessage, setAlarmMessage] = useState("예산 계산기");
 
   useEffect(() => {
-    // expsData가 변경될 때마다 localStorage에 저장
+    // expsData localStorage 저장
     localStorage.setItem("expsData", JSON.stringify(expsData));
   }, [expsData]);
 
@@ -28,32 +34,57 @@ function App() {
       value: value,
     };
 
-    // 원래 있던 할 일에 새로운 할 일 더해주기
     setExpsData((prev) => [...prev, newExps]);
     localStorage.setItem("expsData", JSON.stringify([...expsData, newExps]));
 
-    // 입력란에 있던 글씨 지워주기
     setItem("");
     setValue("");
+    setAlarmMessage("생성 완료");
   };
 
   const handleRemoveClick = () => {
     setExpsData([]);
     localStorage.setItem("expsData", JSON.stringify([]));
+    setAlarmMessage("모두 삭제");
   };
 
+  const handleUpdateAlarmMessage = (message) => {
+    setAlarmMessage(message);
+  };
+
+  // 3초 동안만 알람 띄워짐
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setAlarmMessage("예산 계산기");
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, [alarmMessage]);
+
+  const alarmStyle = {
+    color: alarmMessage.includes("삭제") ? "#FF0000" : // "삭제"가 포함되면 빨간색
+          alarmMessage !== "예산 계산기" ? "#2CDE00" : // 그 외의 메시지면 초록색
+          "inherit",
+  };
+  
   return (
     <div>
-      <h1>예산 계산기</h1>
-      <div>
-        <Expenses item={item} setItem={setItem} value={value} setValue={setValue} handleSubmit={handleSubmit}/>
+      <div className="container">
+        <div className="leftSide">
+          <Expenses item={item} setItem={setItem} value={value} setValue={setValue} handleSubmit={handleSubmit}/>
+          <Coin className="img-coin"/>
+          <div className="alarm-position">
+            <Balloon className="img-balloon"/>
+            <Alarm className="alarm-container" message={alarmMessage} style={alarmStyle} />   
+          </div>
+        </div>
+        <div className="rightSide">
+          <Lists expsData={expsData} setExpsData={setExpsData} updateAlarmMessage={handleUpdateAlarmMessage} />
+        </div>
       </div>
-      <button onClick={handleRemoveClick}>Delete All</button>
-      <div>
-        <Lists expsData={expsData} setExpsData={setExpsData} />
-      </div>
-        
+      <button className="delete-all" onClick={handleRemoveClick}>목록 지우기</button>
     </div>
+
   );
 }
 

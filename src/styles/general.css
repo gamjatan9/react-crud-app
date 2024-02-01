@@ -1,0 +1,37 @@
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+body {
+  height: 100vh;
+  font-family: Noto Sans;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  margin: 0;
+  background-color: #fff;
+  color: #000;
+  overflow-x: hidden;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.leftSide {
+  flex: 4;
+  width: 40%;
+  height: 100vh;
+  flex-shrink: 0;
+  background: #dedede;
+  display: flex;
+  position: relative;
+}
+
+.rightSide {
+  flex: 6;
+  display: flex;
+}

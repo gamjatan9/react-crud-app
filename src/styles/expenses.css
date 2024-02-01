@@ -1,0 +1,53 @@
+.img-coin {
+  position: absolute;
+  margin-top: 70vh;
+  margin-left: 150px
+}
+
+.alarm-position {
+  position: absolute;
+  width: 400px;
+  top: 45vh; 
+  left: 40px; 
+}
+
+.img-balloon, .alarm-container {
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  height: 200px;
+}
+
+.alarm-container {
+  left: 120px; 
+  top: 60px;
+  font-size: 40px; 
+}
+
+.input-item-title {
+  display: inline-block;
+  padding: 50px 10px 0px 40px;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.input-item {
+  border-radius: 10px;
+  border: 1px solid #9f9f9f;
+  width: 328px;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.input-submit {
+  margin-top: 40px;
+  margin-left: 300px;
+  width: 149px;
+  height: 50px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #b1b1b1;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
